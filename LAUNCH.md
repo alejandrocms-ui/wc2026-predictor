@@ -128,3 +128,25 @@ Copy `.env.example` → `.env` and fill any of:
   **not** feed the statistical model.
 
 The app always degrades gracefully to Tier-0 and badges which tier produced each prediction.
+
+---
+
+## Refresco automático durante el torneo (GitHub Actions)
+
+El repo incluye `.github/workflows/refresh.yml`, un workflow programado que mantiene la app
+al día **sin intervención manual**:
+
+- **Cuándo:** diario a las 12:00 UTC durante junio y julio (cron `0 12 * 6,7 *`), más
+  ejecución manual on-demand.
+- **Qué hace:** re-descarga los resultados más recientes, recalcula Elo/forma, re-entrena el
+  ensamble, re-simula (50k), y hace commit de `data/wc2026.duckdb` + `data/model.pkl` solo si
+  cambiaron. El commit dispara el redeploy automático de Streamlit Cloud.
+- **Permisos:** usa el `GITHUB_TOKEN` con `contents: write` (ya habilitado en el repo).
+
+Controles:
+- **Ejecutar ahora:** pestaña *Actions* → *Refrescar predicciones* → *Run workflow*; o
+  `gh workflow run refresh.yml`.
+- **Cambiar frecuencia:** edita la línea `cron:` (p. ej. `0 */6 * 6,7 *` = cada 6 h).
+- **Pausar:** *Actions* → selecciona el workflow → *⋯* → *Disable workflow*.
+- ⚠️ El bot hace commits al repo: antes de trabajar en local haz `git pull` para evitar
+  divergencias.

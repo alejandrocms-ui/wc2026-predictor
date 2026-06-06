@@ -1,8 +1,16 @@
 # wc2026-predictor ⚽
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=alejandrocms-ui/wc2026-predictor&branch=main&mainModule=wc2026/app/main.py)
+![tests](https://img.shields.io/badge/tests-44%20passing-brightgreen)
+![python](https://img.shields.io/badge/python-3.11%2B-blue)
+![license](https://img.shields.io/badge/license-MIT-lightgrey)
+
 Calibrated probabilistic predictions for the **2026 FIFA World Cup group stage** —
 per-match scoreline distributions, 1X2 / BTTS / Over-Under markets, group standings
 probabilities, and **qualification-to-Round-of-32** odds via vectorised Monte Carlo.
+
+📊 **App screenshots:** see [`docs/screenshots/`](docs/screenshots) · 📖 **Explicación en
+español:** [`EXPLICACION.md`](EXPLICACION.md) · 🚀 **Deploy:** [`LAUNCH.md`](LAUNCH.md)
 
 > **This is a decision-support and analytical tool, not a betting guarantee.** Uncertainty
 > is irreducible and surfaced everywhere; predictions are weaker for teams with little

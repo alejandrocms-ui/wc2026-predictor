@@ -1,0 +1,21 @@
+# Runtime deps for Streamlit Community Cloud (and local app installs).
+# The app ships with a pre-built store (data/wc2026.duckdb) + trained model (data/model.pkl),
+# so it runs WITHOUT re-running the pipeline. LightGBM/scikit-learn are needed to load the
+# saved ensemble; if they fail to load, the app falls back gracefully to Dixon-Coles.
+numpy>=1.26,<3
+scipy>=1.11
+pandas>=2.1
+pyarrow>=14
+duckdb>=0.10
+pydantic>=2.5
+pydantic-settings>=2.1
+requests>=2.31
+python-dotenv>=1.0
+
+# UI
+streamlit>=1.31
+altair>=5.1
+
+# ML ensemble (so data/model.pkl unpickles on the cloud)
+lightgbm>=4.1
+scikit-learn>=1.3

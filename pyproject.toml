@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wc2026-predictor"
+version = "0.1.0"
+description = "Calibrated probabilistic predictions for the 2026 FIFA World Cup group stage (group stage + Round-of-32 qualification)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "wc2026-predictor" }]
+
+# Core dependencies — the app MUST run end-to-end with these alone (Tier-0, zero keys).
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "pandas>=2.1",
+    "pyarrow>=14",
+    "duckdb>=0.10",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+# Streamlit UI (MVP front end).
+app = ["streamlit>=1.31", "altair>=5.1"]
+# Gradient-boosted tertiary model + ensemble.
+ml = ["lightgbm>=4.1", "scikit-learn>=1.3", "statsmodels>=0.14"]
+# Optional Bayesian hierarchical model (behind --bayesian flag). Heavy deps.
+bayes = ["numpyro>=0.13", "jax>=0.4"]
+# Tier-1 enrichment scrapers (FBref / xG). Optional, free-tier.
+scrape = ["soccerdata>=1.6"]
+# Dev tooling.
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.1", "black>=23.12"]
+
+[project.scripts]
+wc2026 = "wc2026.pipeline:main"
+
+[tool.setuptools.packages.find]
+include = ["wc2026*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]  # black handles line length
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

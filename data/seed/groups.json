@@ -1,0 +1,21 @@
+{
+  "_provenance": {
+    "source": "User-provided verified seed (prompt §2). RE-VERIFY against official FIFA before finalizing.",
+    "as_of": "2026-06-05",
+    "note": "48 teams, 12 groups A-L of 4. Top 2 + 8 best thirds advance to Round of 32."
+  },
+  "groups": {
+    "A": ["Mexico", "South Africa", "Korea Republic", "Czechia"],
+    "B": ["Canada", "Switzerland", "Qatar", "Bosnia and Herzegovina"],
+    "C": ["Brazil", "Morocco", "Haiti", "Scotland"],
+    "D": ["United States", "Paraguay", "Australia", "Türkiye"],
+    "E": ["Germany", "Curaçao", "Côte d'Ivoire", "Ecuador"],
+    "F": ["Netherlands", "Japan", "Tunisia", "Sweden"],
+    "G": ["Belgium", "Egypt", "Iran", "New Zealand"],
+    "H": ["Spain", "Cabo Verde", "Saudi Arabia", "Uruguay"],
+    "I": ["France", "Senegal", "Norway", "Iraq"],
+    "J": ["Argentina", "Algeria", "Austria", "Jordan"],
+    "K": ["Portugal", "Uzbekistan", "Colombia", "Congo DR"],
+    "L": ["England", "Croatia", "Ghana", "Panama"]
+  }
+}

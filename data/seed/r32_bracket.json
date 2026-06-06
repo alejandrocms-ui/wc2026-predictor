@@ -1,0 +1,25 @@
+{
+  "_provenance": {
+    "source": "Official 2026 FIFA World Cup Round-of-32 bracket (verified Dec 2025: Wikipedia knockout-stage page cross-checked). Fixed winner/runner-up pairings + match numbers/dates/venues HIGH confidence; third-place eligibility POOLS HIGH confidence; the full 495-combination Annex C allocation table is NOT included (pull from the FIFA regulations PDF to resolve specific scenarios).",
+    "as_of": "2026-06-05",
+    "note": "W = group winner (e.g. 1A), RU = runner-up (2A), 3rd = one of the 8 best third-placed teams from the listed eligible groups. Qualification-to-R32 probabilities do NOT need this table; it is the seam for the optional knockout extension."
+  },
+  "ties": [
+    {"match_no": 73, "date": "2026-06-28", "a": "2A", "b": "2B", "venue_city": "Los Angeles"},
+    {"match_no": 74, "date": "2026-06-29", "a": "1E", "b": "3rd:A/B/C/D/F", "venue_city": "Boston"},
+    {"match_no": 75, "date": "2026-06-29", "a": "1F", "b": "2C", "venue_city": "Monterrey"},
+    {"match_no": 76, "date": "2026-06-29", "a": "1C", "b": "2F", "venue_city": "Houston"},
+    {"match_no": 77, "date": "2026-06-30", "a": "1I", "b": "3rd:C/D/F/G/H", "venue_city": "New York New Jersey"},
+    {"match_no": 78, "date": "2026-06-30", "a": "2E", "b": "2I", "venue_city": "Dallas"},
+    {"match_no": 79, "date": "2026-06-30", "a": "1A", "b": "3rd:C/E/F/H/I", "venue_city": "Mexico City"},
+    {"match_no": 80, "date": "2026-07-01", "a": "1L", "b": "3rd:E/H/I/J/K", "venue_city": "Atlanta"},
+    {"match_no": 81, "date": "2026-07-01", "a": "1D", "b": "3rd:B/E/F/I/J", "venue_city": "San Francisco Bay Area"},
+    {"match_no": 82, "date": "2026-07-01", "a": "1G", "b": "3rd:A/E/H/I/J", "venue_city": "Seattle"},
+    {"match_no": 83, "date": "2026-07-02", "a": "2K", "b": "2L", "venue_city": "Toronto"},
+    {"match_no": 84, "date": "2026-07-02", "a": "1H", "b": "2J", "venue_city": "Los Angeles"},
+    {"match_no": 85, "date": "2026-07-02", "a": "1B", "b": "3rd:E/F/G/I/J", "venue_city": "Vancouver"},
+    {"match_no": 86, "date": "2026-07-03", "a": "1J", "b": "2H", "venue_city": "Miami"},
+    {"match_no": 87, "date": "2026-07-03", "a": "1K", "b": "3rd:D/E/I/J/L", "venue_city": "Kansas City"},
+    {"match_no": 88, "date": "2026-07-03", "a": "2D", "b": "2G", "venue_city": "Dallas"}
+  ]
+}

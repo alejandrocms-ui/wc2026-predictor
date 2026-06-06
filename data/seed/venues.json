@@ -1,0 +1,25 @@
+{
+  "_provenance": {
+    "source": "Seed: 16 confirmed 2026 host cities across MEX/USA/CAN with approx stadium altitude (m) and lat/lon for travel-distance features.",
+    "as_of": "2026-06-05",
+    "note": "Altitude is a MATERIAL feature (Mexico City ~2240 m). Re-verify exact stadium coordinates before finalizing."
+  },
+  "venues": [
+    {"city": "Mexico City", "country": "MEX", "stadium": "Estadio Azteca", "altitude_m": 2240, "lat": 19.3029, "lon": -99.1505},
+    {"city": "Guadalajara", "country": "MEX", "stadium": "Estadio Akron", "altitude_m": 1566, "lat": 20.6818, "lon": -103.4628},
+    {"city": "Monterrey", "country": "MEX", "stadium": "Estadio BBVA", "altitude_m": 540, "lat": 25.6690, "lon": -100.2444},
+    {"city": "Atlanta", "country": "USA", "stadium": "Mercedes-Benz Stadium", "altitude_m": 320, "lat": 33.7554, "lon": -84.4008},
+    {"city": "Boston", "country": "USA", "stadium": "Gillette Stadium", "altitude_m": 30, "lat": 42.0909, "lon": -71.2643},
+    {"city": "Dallas", "country": "USA", "stadium": "AT&T Stadium", "altitude_m": 180, "lat": 32.7473, "lon": -97.0945},
+    {"city": "Houston", "country": "USA", "stadium": "NRG Stadium", "altitude_m": 15, "lat": 29.6847, "lon": -95.4107},
+    {"city": "Kansas City", "country": "USA", "stadium": "Arrowhead Stadium", "altitude_m": 270, "lat": 39.0489, "lon": -94.4839},
+    {"city": "Los Angeles", "country": "USA", "stadium": "SoFi Stadium", "altitude_m": 30, "lat": 33.9535, "lon": -118.3392},
+    {"city": "Miami", "country": "USA", "stadium": "Hard Rock Stadium", "altitude_m": 3, "lat": 25.9580, "lon": -80.2389},
+    {"city": "New York New Jersey", "country": "USA", "stadium": "MetLife Stadium", "altitude_m": 5, "lat": 40.8135, "lon": -74.0745},
+    {"city": "Philadelphia", "country": "USA", "stadium": "Lincoln Financial Field", "altitude_m": 12, "lat": 39.9008, "lon": -75.1675},
+    {"city": "San Francisco Bay Area", "country": "USA", "stadium": "Levi's Stadium", "altitude_m": 4, "lat": 37.4030, "lon": -121.9698},
+    {"city": "Seattle", "country": "USA", "stadium": "Lumen Field", "altitude_m": 5, "lat": 47.5952, "lon": -122.3316},
+    {"city": "Toronto", "country": "CAN", "stadium": "BMO Field", "altitude_m": 76, "lat": 43.6332, "lon": -79.4185},
+    {"city": "Vancouver", "country": "CAN", "stadium": "BC Place", "altitude_m": 3, "lat": 49.2768, "lon": -123.1119}
+  ]
+}

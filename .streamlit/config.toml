@@ -1,0 +1,17 @@
+# Streamlit app configuration (UI theme + server defaults).
+# The festive World-Cup palette is mostly driven by custom CSS in wc2026/app/theme.py;
+# these base tokens keep native widgets (focus rings, checkboxes) on-brand.
+[theme]
+primaryColor = "#E4007C"
+backgroundColor = "#F7F8FC"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#14142B"
+font = "sans serif"
+
+[server]
+headless = true
+# Streamlit Community Cloud sets the port; locally this is the default.
+port = 8501
+
+[browser]
+gatherUsageStats = false

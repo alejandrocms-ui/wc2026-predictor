@@ -1,0 +1,58 @@
+name: Refrescar predicciones (Mundial 2026)
+
+# Reconstruye el store + el modelo con los resultados más recientes y los sube al repo.
+# Streamlit Community Cloud detecta el nuevo commit y redespliega la app automáticamente.
+
+on:
+  schedule:
+    # Diario a las 12:00 UTC (madrugada/mañana en América) durante junio y julio de 2026,
+    # cuando ya están cargados en el dataset abierto los partidos del día anterior.
+    - cron: "0 12 * 6,7 *"
+  workflow_dispatch: {}   # permite ejecutarlo manualmente desde la pestaña Actions
+
+# Necesario para que el bot pueda hacer commit/push de los artefactos regenerados.
+permissions:
+  contents: write
+
+# Evita ejecuciones solapadas si una tarda más de lo previsto.
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Reconstruir datos + modelo (re-descarga resultados, re-entrena, re-simula)
+        run: |
+          python -m wc2026.pipeline --refresh --n-sims 50000
+
+      - name: Hacer commit de los artefactos si cambiaron
+        run: |
+          git config user.name  "wc2026-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Forzar el add de los artefactos (están en .gitignore por defecto).
+          git add -f data/wc2026.duckdb data/model.pkl
+          if git diff --cached --quiet; then
+            echo "Sin cambios en las predicciones; nada que subir."
+          else
+            STAMP=$(date -u +'%Y-%m-%d %H:%M UTC')
+            git commit -m "chore(data): refresco automático de predicciones ($STAMP)"
+            git push
+            echo "Predicciones actualizadas y subidas → Streamlit Cloud redesplegará."
+          fi

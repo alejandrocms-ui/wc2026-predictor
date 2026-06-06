@@ -2,20 +2,31 @@
 
 from __future__ import annotations
 
-import altair as alt
-import pandas as pd
-import streamlit as st
+# Make the repo root importable when run as a script (e.g. Streamlit Community Cloud, which
+# does not `pip install` the package). This puts the directory that CONTAINS the ``wc2026``
+# package on sys.path, so ``import wc2026...`` resolves and config's REPO_ROOT (and thus the
+# data/ paths) still point at the repo working dir.
+import sys
+from pathlib import Path
 
-from wc2026.app import theme
-from wc2026.app.data import (
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
+
+import altair as alt  # noqa: E402
+import pandas as pd  # noqa: E402
+import streamlit as st  # noqa: E402
+
+from wc2026.app import theme  # noqa: E402
+from wc2026.app.data import (  # noqa: E402
     get_model,
     get_spec,
     load_provenance_df,
     load_simulation_df,
 )
-from wc2026.config import get_settings
-from wc2026.domain import MatchContext
-from wc2026.i18n import LANGUAGES, Translator
+from wc2026.config import get_settings  # noqa: E402
+from wc2026.domain import MatchContext  # noqa: E402
+from wc2026.i18n import LANGUAGES, Translator  # noqa: E402
 
 st.set_page_config(page_title="Predictor Copa Mundial 2026 ⚽", page_icon="⚽", layout="wide")
 st.markdown(theme.CSS, unsafe_allow_html=True)
